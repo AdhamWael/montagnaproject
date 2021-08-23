@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montagna</title>
+    <link rel="stylesheet" href="{% static 'shop.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'Images/Logo.png' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <div class="logo">Montagna</div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/accounts/shop" class="active">Shop</a></li>
+
+                    {% if user.is_authenticated %}
+                    <li>Hello, {{user.username}}</li>
+                    <li><a href="/accounts/logout">LogOut</a></li>
+                    {% else %}
+                    <li><a href="/accounts/login">LogIn</a></li>
+                    <li><a href="/accounts/register">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+        </header>                 
+
+    </div>
+
+
+    <div class='row card-group row_card'>
+        {% for product in products %}
+            <div class="col-4">
+                <div class="container">
+                    <ul class="thumb">
+                        <li onmouseover="hha('/media/{{product.product_image1}}')">
+                        <img src="/media/{{product.product_image1}}"></li>
+                        <li onmouseover="hha('/media/{{product.product_image2}}')">
+                        <img src="/media/{{product.product_image2}}"></li>
+                        <li onmouseover="hha('/media/{{product.product_image3}}')"> 
+                        <img src="/media/{{product.product_image3}}"></li>
+                    </ul>
+                    <div class="imgBox">
+                        <h2>{{product.product_name}}</h2>
+                        <img src="/media/{{product.product_image1}}" id="{{product.product_classes}}">
+                        <a href="#" class="btn52">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+               <script>
+                    function hha(anything) {
+                        var img_id = {{product.product_classes}}.id
+                        console.log(img_id)
+                        document.getElementById(img_id).src = anything;
+                    }
+                </script>
+        {% endfor %}
+    </div>
+
+        <footer>
+            <div class="top-container">
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Gallery</strong></a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Picks</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Marketplace</strong></a></li>
+                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Best Selling</a></li>
+                        <li><a href="#">Latest</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Magazine</strong></a></li>
+                        <li><a href="#">Art Skills</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Inspiration</a></li>
+                        <li><a href="#">News</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Newsletter</strong></a></li>
+                        <li>
+                            <a href="#">
+                                <p>Subscribe to our newsletter to get your<br/> weekly dose of news,update,tips and<br/> special offers.</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Enter Your Emai Address">
+                        <label class="fas fa-envelope input-icon"></label>
+                    </div>
+                    <button class="btn">Subscribe</button>
+                </div>
+
+            </div>
+            <div class="horz"> </div>
+
+            <div class="bottom">
+                <div class="left">
+                    <p>
+                        <a href="#">Privacy Policy - Terms and conditions</a>
+                    </p>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>
+                            <a href="#">Driblle</a>
+                        </li>
+                        <li>
+                            <a href="#">- Behance</a>
+                        </li>
+                        <li>
+                            <a href="#">- Instgram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    <script type="text/javascript">
+        $element.bind('mouseover', function() {
+            var id = $(this).attr('id');
+            console.log(id)
+        });
+    </script>        
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montagna</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="icon" href="{% static 'Images/Logo.png' %}">
+
+</head>
+
+<body>
+    <div style="background-image:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url({% static 'Images/register.jpg' %});" class="main">
+        <div class="register-form">
+            <h1>Register</h1>
+            <div id="registerForm">
+                <form action="register" method="post">
+                    {% csrf_token %}
+                    <p>First Name</p>
+                    <div class="input-icons">
+                        <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p>Last name</p>
+                    <div class="input-icons">
+                        <input type="text" name="last_name" id="last_name" placeholder="LastName" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p>Email</p>
+                    <div class="input-icons">
+                        <input type="email"  name="email" id="email"  placeholder="Email" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <p>User Name</p>
+                    <div class="input-icons">
+                        <input type="text" name="username" id="username"  placeholder="User Name" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <p>Password</p>
+                    <div class="input-icons">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                       <p>Repeat Password</p>
+                    <div class="input-icons">
+                        <input type="password" name="password2" id="password2" placeholder="Repeat Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>                
+                    <button type="submit" class="btn">Register</button>
+                <br>
+                <a href="/accounts/login" class="sign50">Have an Account???Login</a> 
+                </form>
+                <div>
+                {% for message in messages %}
+                    <h3>{{message}}</h3>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

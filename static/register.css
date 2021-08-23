@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main {
+    margin: 0%;
+    padding: 0%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("Images/register.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1349px;
+    height: 900px;
+    position: relative;
+}
+
+.register-form {
+    position: absolute;
+    background-color: #fff;
+    width: 500px;
+    height: 850px;
+    margin-top: 25px;
+    margin-left: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.register-form h1 {
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 50px;
+}
+
+#registerForm .input-icons {
+    position: relative;
+    display: inline-block;
+}
+
+#registerForm .input-icons input {
+    width: 300px;
+    font-size: 20px;
+    text-indent: 20px;
+    padding: 1px;
+    border: 0;
+    border-bottom: solid 2px #999;
+    background-color: transparent;
+    transition: all 1s ease;
+    margin-bottom: 40px;
+}
+
+#registerForm .input-icons i {
+    color: #999;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+#registerForm .input-icons input:focus {
+    border-color: rgba(0, 0, 0, 3);
+}
+
+#registerForm .input-icons input:focus+i {
+    color: rgb(199, 77, 199);
+}
+
+#registerForm .b50 {
+    text-decoration: none;
+    color: rgb(200, 153, 247);
+    text-align: left;
+    margin-left: 150px;
+    transition: all 1s ease;
+    transition-delay: .2s;
+}
+
+#registerForm button:hover {
+    animation: animate 8s linear infinite;
+}
+
+#registerForm .b50:hover {
+    color: rgb(54, 0, 99);
+}
+
+#registerForm button {
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    font-weight: 600;
+    color: #fff;
+    font-size: 20px;
+}
+
+.fa-google-plus {
+    font-size: 50px;
+    color: darkred;
+    transition: all 1s ease;
+}
+
+.fa-facebook {
+    font-size: 50px;
+    color: blue;
+    transition: all 1s ease;
+    margin-right: 20px;
+}
+
+.fa-twitter-square {
+    font-size: 50px;
+    color: skyblue;
+    transition: all 1s ease;
+    margin-right: 20px;
+}
+
+.fa-google-plus:hover {
+    color: black;
+}
+
+.fa-facebook:hover {
+    color: black;
+}
+
+.fa-twitter-square:hover {
+    color: black;
+}
+
+.btn50 {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #12c2e9, #c471ed, #f64f59);
+    background-size: 400%;
+    border-radius: 30px;
+}
+
+.btn50:hover {
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+        color: white;
+    }
+    100% {
+        background-position: 100%;
+        color: #fff;
+    }
+}
+
+.btn50:hover::before {
+    animation: animate 2s linear infinite;
+}
+
+.sign50 {
+    text-decoration: none;
+    color: black;
+    transition: all 2s ease;
+}
+
+.sign50:hover {
+    color: red;
+}

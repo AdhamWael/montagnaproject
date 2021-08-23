@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montagna</title>
+
+    <link rel="stylesheet" href= "{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="icon" href="{% static 'Images/Logo.png' %}">
+
+</head>
+
+<body>
+
+    <div class="main">
+        <header>
+            <div class="logo">Montagna</div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    
+                    {% if user.is_authenticated %}                                
+                    <li><a href="/accounts/shop">Shop</a></li>
+                    <li>Hello, {{user.username}}</li> 
+                    <li><a href="/accounts/logout">LogOut</a></li>
+                    {% else %}                    
+                    <li><a href="/accounts/login">LogIn</a></li>
+                    <li><a href="/accounts/register">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        </header>
+
+        <div class="cad58">
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="{% static 'Images/img1.jpg' %}" height="650px" class="d-block w-100" alt="Magic Mouse">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Magic Mouse</h5>
+                            <p>Here's Magic mouse wirless</p>
+                            <Button class="button525">Shop Now</Button>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="{% static 'Images/img2.jpg' %}" height="650px" class="d-block w-100" alt="Macbook Pro">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Macbook Pro</h5>
+                            <p>Here's Macbook Pro with the new apple chip M1 </p>
+                            <Button class="button525">Shop Now</Button>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="{% static 'Images/img3.jpg' %}" height="650px" class="d-block w-100" alt="Iphone 12 pro max">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Iphone 12 pro max</h5>
+                            <p>Here's the Iphone 12 pro max</p>
+                            <Button class="button525">Shop Now</Button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+            </div>
+        </div>
+
+        <div class="cards">
+
+
+            <div class="cards-container">
+                <div style="background-image: url({% static 'Images/card1.jpg' %});" class="card1">
+                    <div class="name">Smart Phones</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut qui, illum odit repudiandae non quas vitae minima sequi, ipsam autem sapiente, maiores minus veniam.</p>
+                </div>
+
+                <div style="background-image: url({% static 'Images/card2.jpg' %});" class="card2">
+                    <div class="hnj52">
+                        <div class="name">Professional Cameras</div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta nostrum mollitia laboriosam unde voluptas doloribus, cumque nam, debitis voluptate accusantium amet aliquam voluptatum odit veritatis praesentium quis odio quaerat
+                            itaque. Doloribus quis neque soluta perspiciatis consectetur rerum odio eveniet, quisquam alias? In sequi est ad doloribus architecto hic eaque rem nisi odio eum! Tempore iure ad amet neque. Suscipit impedit explicabo cumque
+                            ipsa voluptas. Deserunt aliquid, voluptatibus quasi optio repellat illum, ullam magnam architecto nulla magni quod ipsa! Sapiente consectetur quis in, velit nesciunt at aliquam, quibusdam soluta doloremque doloribus ipsam obcaecati,
+                            deserunt praesentium? Facilis est ab optio culpa delectus!</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="cards">
+            <div class="cards-container">
+                <div class="car1">
+                    <img class="fa5251" src="{% static 'Images/car1.jpg' %}" title="HeadPhones">
+                    <div class="fa25">HeadPhones</div>
+                    <p class="fa24">50$</p>
+                </div>
+                <div class="car2">
+                    <img class="fa5251" src="{% static 'Images/car2.jpg' %}" title="Charging Cable">
+                    <div class="fa25">Cable</div>
+                    <p class="fa24">20$</p>
+                </div>
+                <div class="car3">
+                    <img class="fa5251" src="{% static 'Images/car3.jpg' %}" title="Speakers">
+                    <div class="fa25">Speakers</div>
+                    <p class="fa24">250$</p>
+                </div>
+                <div class="car4">
+                    <img class="fa5251" src="{% static 'Images/car4.jpg' %}" title="Keyboards">
+                    <div class="fa25">Keyboards</div>
+                    <p class="fa24">80$</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="services">
+            <h1 class="title">Our Services</h1>
+            <div class="services-container">
+
+                <div class="box">
+                    <div class="box-icon">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Free Shipping Worldwide</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis ipsa ratione aliquid deleniti nesciunt quis voluptas numquam illo vel?</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-icon">
+                        <i class="fas fa-inbox"></i>
+                    </div>
+
+                    <div class="text">
+                        <h3>Free Returns</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis ipsa ratione aliquid deleniti nesciunt quis voluptas numquam illo vel?</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-icon">
+                        <i class="far fa-comment-dots"></i>
+                    </div>
+                    <div class="text">
+                        <h3>24h Fast Support</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis ipsa ratione aliquid deleniti nesciunt quis voluptas numquam illo vel?</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="horz"> </div>
+
+        <footer>
+            <div class="top-container">
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Gallery</strong></a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Picks</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Marketplace</strong></a></li>
+                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Best Selling</a></li>
+                        <li><a href="#">Latest</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Magazine</strong></a></li>
+                        <li><a href="#">Art Skills</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Inspiration</a></li>
+                        <li><a href="#">News</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="top-coulmn">
+                    <ul>
+                        <li><a href="#"><strong>Newsletter</strong></a></li>
+                        <li>
+                            <a href="#">
+                                <p>Subscribe to our newsletter to get your<br/> weekly dose of news,update,tips and<br/> special offers.</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Enter Your Emai Address">
+                        <label class="fas fa-envelope input-icon"></label>
+                    </div>
+                    <button class="btn">Subscribe</button>
+                </div>
+
+            </div>
+            <div class="horz"> </div>
+
+            <div class="bottom">
+                <div class="left">
+                    <p>
+                        <a href="#">Privacy Policy - Terms and conditions</a>
+                    </p>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>
+                            <a href="#">Driblle</a>
+                        </li>
+                        <li>
+                            <a href="#">- Behance</a>
+                        </li>
+                        <li>
+                            <a href="#">- Instgram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+
+</html>
